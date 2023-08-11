@@ -1,0 +1,19 @@
+casia
+.vscode
+reports
+*.png
+*.zip
+*.ipynb
+*.csv
+wandb
+models
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Pytorch
+*.pt
+*.pth
+.vscode/settings.json
