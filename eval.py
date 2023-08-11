@@ -2,6 +2,8 @@ import random
 import numpy as np
 import tensorflow as tf
 from tensorflow import keras
+from tensorflow.keras import layers
+import matplotlib.pyplot as plt
 import random
 import keras
 import datetime, os
@@ -11,6 +13,8 @@ import models
 
 import utils
 from tensorflow.keras.applications.efficientnet import EfficientNetB0
+
+
 
 config = utils.openConfig()
 
@@ -48,10 +52,12 @@ with open(os.path.join(final_path, 'config.yaml'), 'w') as file:
     
 model = models.build_pretrained(EfficientNetB0, num_classes=num_classes, **config.build_model)
 
-tensorboard_callback = tf.keras.callbacks.TensorBoard(final_path, **config.tensorboard)
+tensorboard_callback = tf.keras.callbacks.TensorBoard(final_path, histogram_freq=1)
 checkpoint = tf.keras.callbacks.ModelCheckpoint(
-    filepath=os.path.join(final_path, config.save_model.checkpoint_name+ '.keras'),
-    **config.save_model)
+    filepath=os.path.join(final_path, 'checkpoint.keras'),
+    save_weights_only=True,
+    monitor='val_loss',
+    save_best_only=True)
 
 wandb.tensorboard.patch(root_logdir=config.output_path)
 wandb.init(project=config.project_name, config=config, dir=final_path, 

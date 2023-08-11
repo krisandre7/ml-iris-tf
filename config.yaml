@@ -27,6 +27,13 @@ wandb:
   log_preds: False
   dataset_name: 'casia'
   log_model: True
+tensorboard:
+  histogram_freq: 1
+save_model:
+  checkpoint_name: 'checkpoint'
+  save_weights_only: True
+  monitor: 'val_loss'
+  save_best_only: True
 
 # Train
 epochs: 500
