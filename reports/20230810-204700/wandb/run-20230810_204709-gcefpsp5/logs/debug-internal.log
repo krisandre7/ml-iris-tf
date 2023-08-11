@@ -1,0 +1,72 @@
+2023-08-10 20:47:09,918 INFO    StreamThr :31910 [internal.py:wandb_internal():86] W&B internal server running at pid: 31910, started at: 2023-08-10 20:47:09.918017
+2023-08-10 20:47:09,920 DEBUG   HandlerThread:31910 [handler.py:handle_request():144] handle_request: status
+2023-08-10 20:47:09,920 INFO    WriterThread:31910 [datastore.py:open_for_write():85] open: ./reports/20230810-204700/wandb/run-20230810_204709-gcefpsp5/run-gcefpsp5.wandb
+2023-08-10 20:47:09,920 DEBUG   SenderThread:31910 [sender.py:send():379] send: header
+2023-08-10 20:47:09,921 DEBUG   SenderThread:31910 [sender.py:send():379] send: run
+2023-08-10 20:47:10,595 INFO    SenderThread:31910 [dir_watcher.py:__init__():211] watching files in: ./reports/20230810-204700/wandb/run-20230810_204709-gcefpsp5/files
+2023-08-10 20:47:10,595 INFO    SenderThread:31910 [sender.py:_start_run_threads():1121] run started: gcefpsp5 with start time 1691714829.918147
+2023-08-10 20:47:10,595 DEBUG   SenderThread:31910 [sender.py:send_request():406] send_request: summary_record
+2023-08-10 20:47:10,595 INFO    SenderThread:31910 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-08-10 20:47:10,597 DEBUG   HandlerThread:31910 [handler.py:handle_request():144] handle_request: check_version
+2023-08-10 20:47:10,597 DEBUG   SenderThread:31910 [sender.py:send_request():406] send_request: check_version
+2023-08-10 20:47:11,097 DEBUG   HandlerThread:31910 [handler.py:handle_request():144] handle_request: run_start
+2023-08-10 20:47:11,110 DEBUG   HandlerThread:31910 [system_info.py:__init__():31] System info init
+2023-08-10 20:47:11,110 DEBUG   HandlerThread:31910 [system_info.py:__init__():46] System info init done
+2023-08-10 20:47:11,110 INFO    HandlerThread:31910 [system_monitor.py:start():181] Starting system monitor
+2023-08-10 20:47:11,110 INFO    SystemMonitor:31910 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-08-10 20:47:11,110 INFO    SystemMonitor:31910 [interfaces.py:start():190] Started cpu monitoring
+2023-08-10 20:47:11,111 INFO    HandlerThread:31910 [system_monitor.py:probe():201] Collecting system info
+2023-08-10 20:47:11,111 INFO    SystemMonitor:31910 [interfaces.py:start():190] Started disk monitoring
+2023-08-10 20:47:11,112 INFO    SystemMonitor:31910 [interfaces.py:start():190] Started gpu monitoring
+2023-08-10 20:47:11,113 INFO    SystemMonitor:31910 [interfaces.py:start():190] Started memory monitoring
+2023-08-10 20:47:11,113 INFO    SystemMonitor:31910 [interfaces.py:start():190] Started network monitoring
+2023-08-10 20:47:11,122 DEBUG   HandlerThread:31910 [system_info.py:probe():195] Probing system
+2023-08-10 20:47:11,177 DEBUG   HandlerThread:31910 [gitlib.py:_init_repo():53] git repository is invalid
+2023-08-10 20:47:11,177 DEBUG   HandlerThread:31910 [system_info.py:probe():240] Probing system done
+2023-08-10 20:47:11,177 DEBUG   HandlerThread:31910 [system_monitor.py:probe():210] {'os': 'Linux-5.15.90.1-microsoft-standard-WSL2-x86_64-with-glibc2.35', 'python': '3.9.17', 'heartbeatAt': '2023-08-11T00:47:11.122806', 'startedAt': '2023-08-11T00:47:09.915183', 'docker': None, 'cuda': None, 'args': (), 'state': 'running', 'program': '/home/kris/projects/ml-iris-tf/train.py', 'codePath': 'train.py', 'host': 'DESKTOP-216RMPA', 'username': 'kris', 'executable': '/home/kris/mambaforge/envs/tf/bin/python', 'cpu_count': 10, 'cpu_count_logical': 20, 'cpu_freq': {'current': 2918.400000000001, 'min': 0.0, 'max': 0.0}, 'cpu_freq_per_core': [{'current': 2918.4, 'min': 0.0, 'max': 0.0}, {'current': 2918.4, 'min': 0.0, 'max': 0.0}, {'current': 2918.4, 'min': 0.0, 'max': 0.0}, {'current': 2918.4, 'min': 0.0, 'max': 0.0}, {'current': 2918.4, 'min': 0.0, 'max': 0.0}, {'current': 2918.4, 'min': 0.0, 'max': 0.0}, {'current': 2918.4, 'min': 0.0, 'max': 0.0}, {'current': 2918.4, 'min': 0.0, 'max': 0.0}, {'current': 2918.4, 'min': 0.0, 'max': 0.0}, {'current': 2918.4, 'min': 0.0, 'max': 0.0}, {'current': 2918.4, 'min': 0.0, 'max': 0.0}, {'current': 2918.4, 'min': 0.0, 'max': 0.0}, {'current': 2918.4, 'min': 0.0, 'max': 0.0}, {'current': 2918.4, 'min': 0.0, 'max': 0.0}, {'current': 2918.4, 'min': 0.0, 'max': 0.0}, {'current': 2918.4, 'min': 0.0, 'max': 0.0}, {'current': 2918.4, 'min': 0.0, 'max': 0.0}, {'current': 2918.4, 'min': 0.0, 'max': 0.0}, {'current': 2918.4, 'min': 0.0, 'max': 0.0}, {'current': 2918.4, 'min': 0.0, 'max': 0.0}], 'disk': {'total': 1006.853931427002, 'used': 27.237571716308594}, 'gpu': 'NVIDIA RTX A2000 8GB Laptop GPU', 'gpu_count': 1, 'gpu_devices': [{'name': 'NVIDIA RTX A2000 8GB Laptop GPU', 'memory_total': 8589934592}], 'memory': {'total': 15.467105865478516}}
+2023-08-10 20:47:11,177 INFO    HandlerThread:31910 [system_monitor.py:probe():211] Finished collecting system info
+2023-08-10 20:47:11,177 INFO    HandlerThread:31910 [system_monitor.py:probe():214] Publishing system info
+2023-08-10 20:47:11,177 DEBUG   HandlerThread:31910 [system_info.py:_save_pip():51] Saving list of pip packages installed into the current environment
+2023-08-10 20:47:11,178 DEBUG   HandlerThread:31910 [system_info.py:_save_pip():67] Saving pip packages done
+2023-08-10 20:47:11,178 DEBUG   HandlerThread:31910 [system_info.py:_save_conda():74] Saving list of conda packages installed into the current environment
+2023-08-10 20:47:11,596 INFO    Thread-12 :31910 [dir_watcher.py:_on_file_created():271] file/dir created: ./reports/20230810-204700/wandb/run-20230810_204709-gcefpsp5/files/wandb-summary.json
+2023-08-10 20:47:11,596 INFO    Thread-12 :31910 [dir_watcher.py:_on_file_created():271] file/dir created: ./reports/20230810-204700/wandb/run-20230810_204709-gcefpsp5/files/requirements.txt
+2023-08-10 20:47:11,596 INFO    Thread-12 :31910 [dir_watcher.py:_on_file_created():271] file/dir created: ./reports/20230810-204700/wandb/run-20230810_204709-gcefpsp5/files/conda-environment.yaml
+2023-08-10 20:47:13,159 DEBUG   HandlerThread:31910 [system_info.py:_save_conda():86] Saving conda packages done
+2023-08-10 20:47:13,160 INFO    HandlerThread:31910 [system_monitor.py:probe():216] Finished publishing system info
+2023-08-10 20:47:13,162 DEBUG   SenderThread:31910 [sender.py:send():379] send: files
+2023-08-10 20:47:13,162 INFO    SenderThread:31910 [sender.py:_save_file():1375] saving file wandb-metadata.json with policy now
+2023-08-10 20:47:13,166 DEBUG   HandlerThread:31910 [handler.py:handle_request():144] handle_request: stop_status
+2023-08-10 20:47:13,166 DEBUG   SenderThread:31910 [sender.py:send_request():406] send_request: stop_status
+2023-08-10 20:47:13,500 INFO    HandlerThread:31910 [handler.py:handle_tbrecord():759] handling tbrecord: tbrecord {
+  log_dir: "./reports/20230810-204700/train"
+  save: true
+}
+control {
+  relay_id: "9e7ed0d41817427aab77915a6f4f4508"
+}
+_info {
+  stream_id: "gcefpsp5"
+}
+
+2023-08-10 20:47:13,500 DEBUG   HandlerThread:31910 [config_util.py:dict_from_config_file():104] no default config file found in config-defaults.yaml
+2023-08-10 20:47:13,688 DEBUG   SenderThread:31910 [sender.py:send():379] send: telemetry
+2023-08-10 20:47:13,689 DEBUG   SenderThread:31910 [sender.py:send():379] send: tbrecord
+2023-08-10 20:47:13,691 INFO    Thread-12 :31910 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./reports/20230810-204700/wandb/run-20230810_204709-gcefpsp5/files/conda-environment.yaml
+2023-08-10 20:47:13,691 INFO    Thread-12 :31910 [dir_watcher.py:_on_file_created():271] file/dir created: ./reports/20230810-204700/wandb/run-20230810_204709-gcefpsp5/files/wandb-metadata.json
+2023-08-10 20:47:14,279 INFO    wandb-upload_0:31910 [upload_job.py:push():131] Uploaded file /tmp/tmpt9s_yfuswandb/zmi8tppx-wandb-metadata.json
+2023-08-10 20:47:14,692 INFO    Thread-12 :31910 [dir_watcher.py:_on_file_created():271] file/dir created: ./reports/20230810-204700/wandb/run-20230810_204709-gcefpsp5/files/output.log
+2023-08-10 20:47:14,892 DEBUG   SenderThread:31910 [sender.py:send():379] send: files
+2023-08-10 20:47:14,892 INFO    SenderThread:31910 [sender.py:_save_file():1375] saving file train/events.out.tfevents.1691714833.DESKTOP-216RMPA.31760.0.v2 with policy live
+2023-08-10 20:47:15,692 INFO    Thread-12 :31910 [dir_watcher.py:_on_file_created():271] file/dir created: ./reports/20230810-204700/wandb/run-20230810_204709-gcefpsp5/files/train/events.out.tfevents.1691714833.DESKTOP-216RMPA.31760.0.v2
+2023-08-10 20:47:15,693 INFO    Thread-12 :31910 [dir_watcher.py:_on_file_created():271] file/dir created: ./reports/20230810-204700/wandb/run-20230810_204709-gcefpsp5/files/train
+2023-08-10 20:47:15,719 INFO    wandb-upload_0:31910 [upload_job.py:push():131] Uploaded file /tmp/tmpt9s_yfuswandb/uy3b9w4q-train/events.out.tfevents.1691714833.DESKTOP-216RMPA.31760.0.v2
+2023-08-10 20:47:15,897 DEBUG   HandlerThread:31910 [handler.py:handle_request():144] handle_request: status_report
+2023-08-10 20:47:16,693 INFO    Thread-12 :31910 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./reports/20230810-204700/wandb/run-20230810_204709-gcefpsp5/files/output.log
+2023-08-10 20:47:20,898 DEBUG   HandlerThread:31910 [handler.py:handle_request():144] handle_request: status_report
+2023-08-10 20:47:23,124 INFO    cpu       :31910 [interfaces.py:monitor():140] Process cpu has exited.
+2023-08-10 20:47:23,124 DEBUG   SystemMonitor:31910 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-08-10 20:47:23,125 DEBUG   SystemMonitor:31910 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-08-10 20:47:23,125 DEBUG   SystemMonitor:31910 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-08-10 20:47:23,126 DEBUG   SenderThread:31910 [sender.py:send():379] send: stats
+2023-08-10 20:47:24,107 INFO    MainThread:31910 [internal.py:handle_exit():76] Internal process exited

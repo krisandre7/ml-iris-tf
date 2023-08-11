@@ -1,0 +1,40 @@
+
+Epoch 1/500
+Traceback (most recent call last):
+  File "/home/kris/projects/ml-iris-tf/train.py", line 66, in <module>
+    history = model.fit(
+  File "/home/kris/mambaforge/envs/tf/lib/python3.9/site-packages/keras/src/utils/traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "/home/kris/mambaforge/envs/tf/lib/python3.9/site-packages/tensorflow/python/eager/execute.py", line 53, in quick_execute
+    tensors = pywrap_tfe.TFE_Py_Execute(ctx._handle, device_name, op_name,
+tensorflow.python.framework.errors_impl.InternalError: Graph execution error:
+Detected at node 'Adam/StatefulPartitionedCall_3' defined at (most recent call last):
+    File "/home/kris/projects/ml-iris-tf/train.py", line 66, in <module>
+      history = model.fit(
+    File "/home/kris/mambaforge/envs/tf/lib/python3.9/site-packages/keras/src/utils/traceback_utils.py", line 65, in error_handler
+      return fn(*args, **kwargs)
+    File "/home/kris/mambaforge/envs/tf/lib/python3.9/site-packages/keras/src/engine/training.py", line 1742, in fit
+      tmp_logs = self.train_function(iterator)
+    File "/home/kris/mambaforge/envs/tf/lib/python3.9/site-packages/keras/src/engine/training.py", line 1338, in train_function
+      return step_function(self, iterator)
+    File "/home/kris/mambaforge/envs/tf/lib/python3.9/site-packages/keras/src/engine/training.py", line 1322, in step_function
+      outputs = model.distribute_strategy.run(run_step, args=(data,))
+    File "/home/kris/mambaforge/envs/tf/lib/python3.9/site-packages/keras/src/engine/training.py", line 1303, in run_step
+      outputs = model.train_step(data)
+    File "/home/kris/mambaforge/envs/tf/lib/python3.9/site-packages/keras/src/engine/training.py", line 1084, in train_step
+      self.optimizer.minimize(loss, self.trainable_variables, tape=tape)
+    File "/home/kris/mambaforge/envs/tf/lib/python3.9/site-packages/keras/src/optimizers/optimizer.py", line 544, in minimize
+      self.apply_gradients(grads_and_vars)
+    File "/home/kris/mambaforge/envs/tf/lib/python3.9/site-packages/keras/src/optimizers/optimizer.py", line 1230, in apply_gradients
+      return super().apply_gradients(grads_and_vars, name=name)
+    File "/home/kris/mambaforge/envs/tf/lib/python3.9/site-packages/keras/src/optimizers/optimizer.py", line 652, in apply_gradients
+      iteration = self._internal_apply_gradients(grads_and_vars)
+    File "/home/kris/mambaforge/envs/tf/lib/python3.9/site-packages/keras/src/optimizers/optimizer.py", line 1260, in _internal_apply_gradients
+      return tf.__internal__.distribute.interim.maybe_merge_call(
+    File "/home/kris/mambaforge/envs/tf/lib/python3.9/site-packages/keras/src/optimizers/optimizer.py", line 1352, in _distributed_apply_gradients_fn
+      distribution.extended.update(
+    File "/home/kris/mambaforge/envs/tf/lib/python3.9/site-packages/keras/src/optimizers/optimizer.py", line 1347, in apply_grad_to_update_var
+      return self._update_step_xla(grad, var, id(self._var_key(var)))
+Node: 'Adam/StatefulPartitionedCall_3'
+libdevice not found at ./libdevice.10.bc
+	 [[{{node Adam/StatefulPartitionedCall_3}}]] [Op:__inference_train_function_14827]

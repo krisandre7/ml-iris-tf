@@ -1,0 +1,11 @@
+name: base
+dependencies:
+  - python=3.9
+  - matplotlib
+  - pyyaml
+  - pandas
+  - scikit-learn
+  - pip
+  - pip:
+    - python-box
+    - wandb

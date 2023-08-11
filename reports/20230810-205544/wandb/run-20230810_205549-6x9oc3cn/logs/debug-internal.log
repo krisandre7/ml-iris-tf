@@ -1,0 +1,101 @@
+2023-08-10 20:55:49,326 INFO    StreamThr :35339 [internal.py:wandb_internal():86] W&B internal server running at pid: 35339, started at: 2023-08-10 20:55:49.326598
+2023-08-10 20:55:49,327 DEBUG   HandlerThread:35339 [handler.py:handle_request():144] handle_request: status
+2023-08-10 20:55:49,330 INFO    WriterThread:35339 [datastore.py:open_for_write():85] open: ./reports/20230810-205544/wandb/run-20230810_205549-6x9oc3cn/run-6x9oc3cn.wandb
+2023-08-10 20:55:49,330 DEBUG   SenderThread:35339 [sender.py:send():379] send: header
+2023-08-10 20:55:49,330 DEBUG   SenderThread:35339 [sender.py:send():379] send: run
+2023-08-10 20:55:50,016 INFO    SenderThread:35339 [dir_watcher.py:__init__():211] watching files in: ./reports/20230810-205544/wandb/run-20230810_205549-6x9oc3cn/files
+2023-08-10 20:55:50,016 INFO    SenderThread:35339 [sender.py:_start_run_threads():1121] run started: 6x9oc3cn with start time 1691715349.326845
+2023-08-10 20:55:50,017 DEBUG   SenderThread:35339 [sender.py:send_request():406] send_request: summary_record
+2023-08-10 20:55:50,017 INFO    SenderThread:35339 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-08-10 20:55:50,019 DEBUG   HandlerThread:35339 [handler.py:handle_request():144] handle_request: check_version
+2023-08-10 20:55:50,020 DEBUG   SenderThread:35339 [sender.py:send_request():406] send_request: check_version
+2023-08-10 20:55:50,312 DEBUG   HandlerThread:35339 [handler.py:handle_request():144] handle_request: run_start
+2023-08-10 20:55:50,357 DEBUG   HandlerThread:35339 [system_info.py:__init__():31] System info init
+2023-08-10 20:55:50,358 DEBUG   HandlerThread:35339 [system_info.py:__init__():46] System info init done
+2023-08-10 20:55:50,358 INFO    HandlerThread:35339 [system_monitor.py:start():181] Starting system monitor
+2023-08-10 20:55:50,358 INFO    SystemMonitor:35339 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-08-10 20:55:50,358 INFO    HandlerThread:35339 [system_monitor.py:probe():201] Collecting system info
+2023-08-10 20:55:50,358 INFO    SystemMonitor:35339 [interfaces.py:start():190] Started cpu monitoring
+2023-08-10 20:55:50,359 INFO    SystemMonitor:35339 [interfaces.py:start():190] Started disk monitoring
+2023-08-10 20:55:50,360 INFO    SystemMonitor:35339 [interfaces.py:start():190] Started gpu monitoring
+2023-08-10 20:55:50,360 INFO    SystemMonitor:35339 [interfaces.py:start():190] Started memory monitoring
+2023-08-10 20:55:50,361 INFO    SystemMonitor:35339 [interfaces.py:start():190] Started network monitoring
+2023-08-10 20:55:50,375 DEBUG   HandlerThread:35339 [system_info.py:probe():195] Probing system
+2023-08-10 20:55:50,435 DEBUG   HandlerThread:35339 [gitlib.py:_init_repo():53] git repository is invalid
+2023-08-10 20:55:50,435 DEBUG   HandlerThread:35339 [system_info.py:probe():240] Probing system done
+2023-08-10 20:55:50,435 DEBUG   HandlerThread:35339 [system_monitor.py:probe():210] {'os': 'Linux-5.15.90.1-microsoft-standard-WSL2-x86_64-with-glibc2.35', 'python': '3.9.17', 'heartbeatAt': '2023-08-11T00:55:50.375242', 'startedAt': '2023-08-11T00:55:49.323157', 'docker': None, 'cuda': None, 'args': (), 'state': 'running', 'program': '/home/kris/projects/ml-iris-tf/train.py', 'codePath': 'train.py', 'host': 'DESKTOP-216RMPA', 'username': 'kris', 'executable': '/home/kris/mambaforge/envs/tf/bin/python', 'cpu_count': 10, 'cpu_count_logical': 20, 'cpu_freq': {'current': 2918.400000000001, 'min': 0.0, 'max': 0.0}, 'cpu_freq_per_core': [{'current': 2918.4, 'min': 0.0, 'max': 0.0}, {'current': 2918.4, 'min': 0.0, 'max': 0.0}, {'current': 2918.4, 'min': 0.0, 'max': 0.0}, {'current': 2918.4, 'min': 0.0, 'max': 0.0}, {'current': 2918.4, 'min': 0.0, 'max': 0.0}, {'current': 2918.4, 'min': 0.0, 'max': 0.0}, {'current': 2918.4, 'min': 0.0, 'max': 0.0}, {'current': 2918.4, 'min': 0.0, 'max': 0.0}, {'current': 2918.4, 'min': 0.0, 'max': 0.0}, {'current': 2918.4, 'min': 0.0, 'max': 0.0}, {'current': 2918.4, 'min': 0.0, 'max': 0.0}, {'current': 2918.4, 'min': 0.0, 'max': 0.0}, {'current': 2918.4, 'min': 0.0, 'max': 0.0}, {'current': 2918.4, 'min': 0.0, 'max': 0.0}, {'current': 2918.4, 'min': 0.0, 'max': 0.0}, {'current': 2918.4, 'min': 0.0, 'max': 0.0}, {'current': 2918.4, 'min': 0.0, 'max': 0.0}, {'current': 2918.4, 'min': 0.0, 'max': 0.0}, {'current': 2918.4, 'min': 0.0, 'max': 0.0}, {'current': 2918.4, 'min': 0.0, 'max': 0.0}], 'disk': {'total': 1006.853931427002, 'used': 27.237659454345703}, 'gpu': 'NVIDIA RTX A2000 8GB Laptop GPU', 'gpu_count': 1, 'gpu_devices': [{'name': 'NVIDIA RTX A2000 8GB Laptop GPU', 'memory_total': 8589934592}], 'memory': {'total': 15.467105865478516}}
+2023-08-10 20:55:50,435 INFO    HandlerThread:35339 [system_monitor.py:probe():211] Finished collecting system info
+2023-08-10 20:55:50,435 INFO    HandlerThread:35339 [system_monitor.py:probe():214] Publishing system info
+2023-08-10 20:55:50,435 DEBUG   HandlerThread:35339 [system_info.py:_save_pip():51] Saving list of pip packages installed into the current environment
+2023-08-10 20:55:50,435 DEBUG   HandlerThread:35339 [system_info.py:_save_pip():67] Saving pip packages done
+2023-08-10 20:55:50,435 DEBUG   HandlerThread:35339 [system_info.py:_save_conda():74] Saving list of conda packages installed into the current environment
+2023-08-10 20:55:51,017 INFO    Thread-12 :35339 [dir_watcher.py:_on_file_created():271] file/dir created: ./reports/20230810-205544/wandb/run-20230810_205549-6x9oc3cn/files/wandb-summary.json
+2023-08-10 20:55:51,017 INFO    Thread-12 :35339 [dir_watcher.py:_on_file_created():271] file/dir created: ./reports/20230810-205544/wandb/run-20230810_205549-6x9oc3cn/files/requirements.txt
+2023-08-10 20:55:51,017 INFO    Thread-12 :35339 [dir_watcher.py:_on_file_created():271] file/dir created: ./reports/20230810-205544/wandb/run-20230810_205549-6x9oc3cn/files/conda-environment.yaml
+2023-08-10 20:55:52,384 DEBUG   HandlerThread:35339 [system_info.py:_save_conda():86] Saving conda packages done
+2023-08-10 20:55:52,385 INFO    HandlerThread:35339 [system_monitor.py:probe():216] Finished publishing system info
+2023-08-10 20:55:52,387 DEBUG   SenderThread:35339 [sender.py:send():379] send: files
+2023-08-10 20:55:52,387 INFO    SenderThread:35339 [sender.py:_save_file():1375] saving file wandb-metadata.json with policy now
+2023-08-10 20:55:52,391 DEBUG   HandlerThread:35339 [handler.py:handle_request():144] handle_request: stop_status
+2023-08-10 20:55:52,391 DEBUG   SenderThread:35339 [sender.py:send_request():406] send_request: stop_status
+2023-08-10 20:55:52,722 INFO    HandlerThread:35339 [handler.py:handle_tbrecord():759] handling tbrecord: tbrecord {
+  log_dir: "./reports/20230810-205544/train"
+  save: true
+}
+control {
+  relay_id: "19dfd2d330064d7d862beff65ff05663"
+}
+_info {
+  stream_id: "6x9oc3cn"
+}
+
+2023-08-10 20:55:52,722 DEBUG   HandlerThread:35339 [config_util.py:dict_from_config_file():104] no default config file found in config-defaults.yaml
+2023-08-10 20:55:52,909 DEBUG   SenderThread:35339 [sender.py:send():379] send: telemetry
+2023-08-10 20:55:52,909 DEBUG   SenderThread:35339 [sender.py:send():379] send: tbrecord
+2023-08-10 20:55:53,032 INFO    Thread-12 :35339 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./reports/20230810-205544/wandb/run-20230810_205549-6x9oc3cn/files/conda-environment.yaml
+2023-08-10 20:55:53,032 INFO    Thread-12 :35339 [dir_watcher.py:_on_file_created():271] file/dir created: ./reports/20230810-205544/wandb/run-20230810_205549-6x9oc3cn/files/output.log
+2023-08-10 20:55:53,032 INFO    Thread-12 :35339 [dir_watcher.py:_on_file_created():271] file/dir created: ./reports/20230810-205544/wandb/run-20230810_205549-6x9oc3cn/files/wandb-metadata.json
+2023-08-10 20:55:53,605 INFO    wandb-upload_0:35339 [upload_job.py:push():131] Uploaded file /tmp/tmpz8sq7psowandb/9hqcr24v-wandb-metadata.json
+2023-08-10 20:55:53,827 DEBUG   SenderThread:35339 [sender.py:send():379] send: files
+2023-08-10 20:55:53,827 INFO    SenderThread:35339 [sender.py:_save_file():1375] saving file train/events.out.tfevents.1691715352.DESKTOP-216RMPA.35200.0.v2 with policy live
+2023-08-10 20:55:54,031 INFO    Thread-12 :35339 [dir_watcher.py:_on_file_created():271] file/dir created: ./reports/20230810-205544/wandb/run-20230810_205549-6x9oc3cn/files/train/events.out.tfevents.1691715352.DESKTOP-216RMPA.35200.0.v2
+2023-08-10 20:55:54,031 INFO    Thread-12 :35339 [dir_watcher.py:_on_file_created():271] file/dir created: ./reports/20230810-205544/wandb/run-20230810_205549-6x9oc3cn/files/train
+2023-08-10 20:55:54,660 INFO    wandb-upload_0:35339 [upload_job.py:push():131] Uploaded file /tmp/tmpz8sq7psowandb/59m8lse1-train/events.out.tfevents.1691715352.DESKTOP-216RMPA.35200.0.v2
+2023-08-10 20:55:54,828 DEBUG   HandlerThread:35339 [handler.py:handle_request():144] handle_request: status_report
+2023-08-10 20:55:55,031 INFO    Thread-12 :35339 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./reports/20230810-205544/wandb/run-20230810_205549-6x9oc3cn/files/output.log
+2023-08-10 20:55:58,336 WARNING StreamThr :35339 [internal.py:is_dead():414] Internal process exiting, parent pid 35200 disappeared
+2023-08-10 20:55:58,336 ERROR   StreamThr :35339 [internal.py:wandb_internal():152] Internal process shutdown.
+2023-08-10 20:55:58,365 INFO    cpu       :35339 [interfaces.py:monitor():140] Process cpu has exited.
+2023-08-10 20:55:58,366 INFO    memory    :35339 [interfaces.py:monitor():140] Process proc.memory.rssMB has exited.
+2023-08-10 20:55:58,366 DEBUG   SystemMonitor:35339 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-08-10 20:55:58,366 DEBUG   SystemMonitor:35339 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-08-10 20:55:58,366 DEBUG   SystemMonitor:35339 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-08-10 20:55:58,367 INFO    HandlerThread:35339 [handler.py:finish():857] shutting down handler
+2023-08-10 20:55:58,367 INFO    HandlerThread:35339 [system_monitor.py:finish():190] Stopping system monitor
+2023-08-10 20:55:58,367 INFO    HandlerThread:35339 [interfaces.py:finish():202] Joined cpu monitor
+2023-08-10 20:55:58,367 INFO    HandlerThread:35339 [interfaces.py:finish():202] Joined disk monitor
+2023-08-10 20:55:58,367 INFO    HandlerThread:35339 [interfaces.py:finish():202] Joined gpu monitor
+2023-08-10 20:55:58,367 INFO    HandlerThread:35339 [interfaces.py:finish():202] Joined memory monitor
+2023-08-10 20:55:58,367 INFO    HandlerThread:35339 [interfaces.py:finish():202] Joined network monitor
+2023-08-10 20:55:58,367 INFO    WriterThread:35339 [datastore.py:close():294] close: ./reports/20230810-205544/wandb/run-20230810_205549-6x9oc3cn/run-6x9oc3cn.wandb
+2023-08-10 20:55:58,368 DEBUG   SenderThread:35339 [sender.py:send():379] send: stats
+2023-08-10 20:55:58,368 INFO    SenderThread:35339 [sender.py:finish():1552] shutting down sender
+2023-08-10 20:55:58,919 INFO    SenderThread:35339 [dir_watcher.py:finish():358] shutting down directory watcher
+2023-08-10 20:55:59,033 INFO    SenderThread:35339 [dir_watcher.py:_on_file_modified():288] file/dir modified: ./reports/20230810-205544/wandb/run-20230810_205549-6x9oc3cn/files/output.log
+2023-08-10 20:55:59,034 INFO    SenderThread:35339 [dir_watcher.py:finish():388] scan: ./reports/20230810-205544/wandb/run-20230810_205549-6x9oc3cn/files
+2023-08-10 20:55:59,034 INFO    SenderThread:35339 [dir_watcher.py:finish():402] scan save: ./reports/20230810-205544/wandb/run-20230810_205549-6x9oc3cn/files/config.yaml config.yaml
+2023-08-10 20:55:59,034 INFO    SenderThread:35339 [dir_watcher.py:finish():402] scan save: ./reports/20230810-205544/wandb/run-20230810_205549-6x9oc3cn/files/conda-environment.yaml conda-environment.yaml
+2023-08-10 20:55:59,035 INFO    SenderThread:35339 [dir_watcher.py:finish():402] scan save: ./reports/20230810-205544/wandb/run-20230810_205549-6x9oc3cn/files/wandb-metadata.json wandb-metadata.json
+2023-08-10 20:55:59,035 INFO    SenderThread:35339 [dir_watcher.py:finish():402] scan save: ./reports/20230810-205544/wandb/run-20230810_205549-6x9oc3cn/files/output.log output.log
+2023-08-10 20:55:59,037 INFO    SenderThread:35339 [dir_watcher.py:finish():402] scan save: ./reports/20230810-205544/wandb/run-20230810_205549-6x9oc3cn/files/requirements.txt requirements.txt
+2023-08-10 20:55:59,037 INFO    SenderThread:35339 [dir_watcher.py:finish():402] scan save: ./reports/20230810-205544/wandb/run-20230810_205549-6x9oc3cn/files/wandb-summary.json wandb-summary.json
+2023-08-10 20:55:59,038 INFO    SenderThread:35339 [dir_watcher.py:finish():402] scan save: ./reports/20230810-205544/wandb/run-20230810_205549-6x9oc3cn/files/train/events.out.tfevents.1691715352.DESKTOP-216RMPA.35200.0.v2 train/events.out.tfevents.1691715352.DESKTOP-216RMPA.35200.0.v2
+2023-08-10 20:55:59,038 INFO    SenderThread:35339 [file_pusher.py:finish():159] shutting down file pusher
+2023-08-10 20:55:59,038 INFO    SenderThread:35339 [file_pusher.py:join():164] waiting for file pusher
+2023-08-10 20:55:59,591 INFO    wandb-upload_0:35339 [upload_job.py:push():131] Uploaded file ./reports/20230810-205544/wandb/run-20230810_205549-6x9oc3cn/files/config.yaml
+2023-08-10 20:55:59,791 INFO    wandb-upload_1:35339 [upload_job.py:push():131] Uploaded file ./reports/20230810-205544/wandb/run-20230810_205549-6x9oc3cn/files/conda-environment.yaml
+2023-08-10 20:55:59,896 INFO    wandb-upload_3:35339 [upload_job.py:push():131] Uploaded file ./reports/20230810-205544/wandb/run-20230810_205549-6x9oc3cn/files/requirements.txt
+2023-08-10 20:55:59,898 INFO    wandb-upload_4:35339 [upload_job.py:push():131] Uploaded file ./reports/20230810-205544/wandb/run-20230810_205549-6x9oc3cn/files/wandb-summary.json
+2023-08-10 20:55:59,955 INFO    wandb-upload_2:35339 [upload_job.py:push():131] Uploaded file ./reports/20230810-205544/wandb/run-20230810_205549-6x9oc3cn/files/output.log
+2023-08-10 20:55:59,955 INFO    MainThread:35339 [internal.py:handle_exit():76] Internal process exited
+2023-08-10 20:56:00,540 INFO    SenderThread:35339 [file_stream.py:finish():593] file stream finish called

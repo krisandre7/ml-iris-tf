@@ -1,0 +1,35 @@
+# Datasets
+image_shape: [280, 320, 3]
+csv_dir: './'
+dataset_name: 'casia'
+dataset_dir: './'
+shuffle_train: True
+batch_size: 64 # batch_size
+
+output_path: './reports'
+random_seed: 42
+
+# StratifiedShuffleSplit
+train_size: 0.667
+test_size: 0.333
+
+# Build Model
+build_model: 
+  optimizer: 'adam'
+  loss: 'sparse_categorical_crossentropy'
+  metrics: ['accuracy']
+  summary: False
+
+# Callbacks
+project_name: "ml-iris-tf"
+wandb:
+  log: 'all'
+  log_preds: False
+  dataset_name: 'casia'
+  log_model: True
+
+# Train
+epochs: 500
+freeze_epochs: 500
+start_epoch: 0
+sync_tensorboard: True

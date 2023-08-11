@@ -1,0 +1,139 @@
+{
+    "os": "Linux-5.15.90.1-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+    "python": "3.9.17",
+    "heartbeatAt": "2023-08-11T01:05:24.776342",
+    "startedAt": "2023-08-11T01:05:23.554438",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "/home/kris/projects/ml-iris-tf/train.py",
+    "codePath": "train.py",
+    "host": "DESKTOP-216RMPA",
+    "username": "kris",
+    "executable": "/home/kris/mambaforge/envs/tf/bin/python",
+    "cpu_count": 10,
+    "cpu_count_logical": 20,
+    "cpu_freq": {
+        "current": 2918.400000000001,
+        "min": 0.0,
+        "max": 0.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2918.4,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2918.4,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2918.4,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2918.4,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2918.4,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2918.4,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2918.4,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2918.4,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2918.4,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2918.4,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2918.4,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2918.4,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2918.4,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2918.4,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2918.4,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2918.4,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2918.4,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2918.4,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2918.4,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2918.4,
+            "min": 0.0,
+            "max": 0.0
+        }
+    ],
+    "disk": {
+        "total": 1006.853931427002,
+        "used": 27.23882293701172
+    },
+    "gpu": "NVIDIA RTX A2000 8GB Laptop GPU",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA RTX A2000 8GB Laptop GPU",
+            "memory_total": 8589934592
+        }
+    ],
+    "memory": {
+        "total": 15.467105865478516
+    }
+}

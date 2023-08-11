@@ -1,0 +1,95 @@
+wandb_version: 1
+
+image_shape:
+  desc: null
+  value:
+  - 280
+  - 320
+  - 3
+csv_dir:
+  desc: null
+  value: ./
+dataset_name:
+  desc: null
+  value: casia
+dataset_dir:
+  desc: null
+  value: ./
+shuffle_train:
+  desc: null
+  value: true
+batch_size:
+  desc: null
+  value: 64
+output_path:
+  desc: null
+  value: ./reports
+random_seed:
+  desc: null
+  value: 42
+train_size:
+  desc: null
+  value: 0.667
+test_size:
+  desc: null
+  value: 0.333
+build_model:
+  desc: null
+  value:
+    optimizer: adam
+    loss: sparse_categorical_crossentropy
+    metrics:
+    - accuracy
+    summary: false
+project_name:
+  desc: null
+  value: ml-iris-tf
+wandb:
+  desc: null
+  value:
+    log: all
+    log_preds: false
+    dataset_name: casia
+    log_model: true
+epochs:
+  desc: null
+  value: 500
+freeze_epochs:
+  desc: null
+  value: 500
+start_epoch:
+  desc: null
+  value: 0
+sync_tensorboard:
+  desc: null
+  value: true
+_wandb:
+  desc: null
+  value:
+    python_version: 3.9.17
+    cli_version: 0.15.8
+    framework: keras
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    start_time: 1691715999.705933
+    t:
+      1:
+      - 2
+      - 3
+      - 5
+      - 53
+      - 55
+      2:
+      - 2
+      - 3
+      - 5
+      - 53
+      - 55
+      3:
+      - 16
+      - 23
+      - 35
+      4: 3.9.17
+      5: 0.15.8
+      8:
+      - 5
