@@ -18,13 +18,13 @@ def openConfig():
         args = yaml.safe_load(file)
     return Box(args)
 
-def load_images(file_paths, labels, input_shape):
+def load_images(file_paths, input_shape):
     images = np.empty((len(file_paths),) + tuple(input_shape))
     for i in range(len(file_paths)):
       imagem = tf.keras.preprocessing.image.load_img(file_paths[i], target_size=input_shape[:2])
       imagem = tf.keras.preprocessing.image.img_to_array(imagem)
       images[i] = imagem
-    return tf.convert_to_tensor(images), tf.convert_to_tensor(labels)
+    return tf.convert_to_tensor(images)
 
 def get_label(path: str, dataset_name: str):
     dataset_split = path.split(dataset_name,1)[1]

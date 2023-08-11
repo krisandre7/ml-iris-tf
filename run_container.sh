@@ -1,1 +1,0 @@
-docker run --gpus all -it --rm --name tf -v $PWD:/tmp -w /tmp tensorflow-miniconda

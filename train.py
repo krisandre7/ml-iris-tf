@@ -22,7 +22,7 @@ tf.random.set_seed(config.random_seed)
 np.random.seed(config.random_seed)
 random.seed(config.random_seed)
 keras.utils.set_random_seed(config.random_seed)
-# tf.config.experimental.enable_op_determinism()
+tf.config.experimental.enable_op_determinism()
 
 dataset_path = os.path.join(config.dataset_dir, config.dataset_name)
 training_id =  datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
@@ -32,10 +32,11 @@ dataframe = utils.getDataframe(**config)
 
 test_dataframe = dataframe.loc[dataframe['is_test'] == True]
 train_dataframe = dataframe.loc[dataframe['is_test'] == False]
-files_test, labels_test = test_dataframe['name'], test_dataframe['label']
-files_train, labels_train = train_dataframe['name'], train_dataframe['label']
+files_test, labels_test = test_dataframe['name'].to_numpy(), test_dataframe['label'].to_numpy()
+files_train, labels_train = train_dataframe['name'].to_numpy(), train_dataframe['label'].to_numpy()
 
-images_train, images_test = utils.load_images(files_train, files_test, config.image_shape)
+images_train = utils.load_images(files_train, config.image_shape)
+images_test = utils.load_images(files_test, config.image_shape)
 
 num_classes = len(np.unique(dataframe['label']))
 train_count = np.unique(labels_train, return_counts=True)[1].mean()
@@ -53,12 +54,12 @@ model = models.build_pretrained(EfficientNetB0, num_classes=num_classes, **confi
 
 tensorboard_callback = tf.keras.callbacks.TensorBoard(final_path, histogram_freq=1)
 checkpoint = tf.keras.callbacks.ModelCheckpoint(
-    filepath=final_path,
+    filepath=os.path.join(final_path, 'checkpoint.keras'),
     save_weights_only=True,
     monitor='val_loss',
-    mode='max',
     save_best_only=True)
 
+wandb.tensorboard.patch(root_logdir=config.output_path)
 wandb.init(project=config.project_name, config=config, dir=final_path, 
            sync_tensorboard=True)
 
