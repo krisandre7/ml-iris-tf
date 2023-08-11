@@ -43,8 +43,7 @@ print(
 os.makedirs(final_path, exist_ok=True)
 
 # Write config to output folder
-with open(os.path.join(final_path, 'config.yaml'), 'w') as file:
-    yaml.dump(config, file)
+config.to_yaml(os.path.join(final_path, 'config.yaml'))
     
 model = models.build_pretrained(EfficientNetB0, num_classes=num_classes, **config.build_model)
 
