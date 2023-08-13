@@ -72,6 +72,14 @@ model.load_weights(os.path.join(train_path, train_config.save_model.checkpoint_n
 y_pred = model.predict(images_test).argmax(axis=1)
 y_test = labels_test
 
+# Tries to create output directory. If it already exists,
+# Wipes and recreates it.
+try:
+    os.makedirs(final_path)
+except:
+    shutil.rmtree(final_path)
+    os.makedirs(final_path)
+
 classes = np.unique(dataframe['label'])
 conf_matrix = confusion_matrix(y_test, y_pred)
 
@@ -84,14 +92,6 @@ sns.heatmap(conf_matrix[:eval_config.output_classes, :eval_config.output_classes
 plt.ylabel('Prediction',fontsize=13)
 plt.xlabel('Actual',fontsize=13)
 plt.title('Confusion Matrix',fontsize=17)
-
-# Tries to create output directory. If it already exists,
-# Wipes and recreates it.
-try:
-    os.makedirs(final_path)
-except:
-    shutil.rmtree(final_path)
-    os.makedirs(final_path)
     
 report = classification_report(y_test, y_pred, zero_division=np.nan)
 print(report)
@@ -101,9 +101,7 @@ with open(os.path.join(final_path,'report.txt'), "w") as report_file:
 
 plt.savefig(os.path.join(final_path, 'confusion_matrix.png'))
 
-embed_model = Model(inputs=model.input, outputs=model.get_layer(eval_config.embed_layer).output)
-embeds = embed_model.predict(images_test[:eval_config.output_classes])
-embeds = embeds.reshape(embeds.shape[0], -1)
+embeds = utils.extract_embeddings(model, images_test, eval_config.embed_layer, eval_config.gradcam_image_num)
 
 X_embeds = TSNE(**eval_config.tsne).fit_transform(embeds)
 

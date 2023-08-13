@@ -8,6 +8,7 @@ import numpy as np
 import glob
 import tensorflow as tf
 import matplotlib.cm as cm
+from tensorflow.keras.models import Model
 
 # Rapid prototyping requires flexible data structures, such as dictionaries. 
 # However, in Python that means typing a lot of square brackets and quotes. 
@@ -161,3 +162,9 @@ def superimpose_gradcam(img_path, heatmap, alpha=0.4):
     superimposed_img = tf.keras.utils.array_to_img(superimposed_img)
 
     return superimposed_img
+
+def extract_embeddings(model, images, embed_layer_name, num_output_classes):
+    embed_model = Model(inputs=model.input, outputs=model.get_layer(embed_layer_name).output)
+    embeds = embed_model.predict(images[:num_output_classes])
+    embeds = embeds.reshape(embeds.shape[0], -1)
+    return embeds

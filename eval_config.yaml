@@ -1,5 +1,4 @@
 output_classes: 20
-random_seed: 42
 embed_layer: 'top_conv'
 gradcam_image_num: 20
 
