@@ -67,21 +67,18 @@ model.load_weights(os.path.join(train_path, train_config.save_model.checkpoint_n
 y_pred = model.predict(images_test).argmax(axis=1)
 y_test = labels_test
 
+classes = np.unique(dataframe['label'])
 conf_matrix = confusion_matrix(y_test, y_pred)
-TP = conf_matrix.diagonal().sum()
-FP = np.abs(np.sum(conf_matrix, axis=1).sum() - TP)
-FN = np.abs(np.sum(conf_matrix, axis=0).sum() - TP)
-TN = np.abs(np.sum(conf_matrix) - (TP + FP + FN))
 
-cf_matrix = np.array([[TP, FP], [FN, TN]])
-
-group_names = ['True Neg','False Pos','False Neg', 'True Pos']
-group_percentages = ["{0:.2%}".format(value) for value in
-                     cf_matrix.flatten()/np.sum(cf_matrix)]
-plt_labels = [f"{v1}\n\n{v3}" for v1, v3 in
-          zip(group_names,group_percentages)]
-plt_labels = np.asarray(plt_labels).reshape(2,2)
-sns.heatmap(cf_matrix, annot=plt_labels, fmt='')
+sns.heatmap(conf_matrix[:20, :20],
+            annot=True,
+            fmt='g',
+            xticklabels=classes[:20],
+            yticklabels=classes[:20],
+    )
+plt.ylabel('Prediction',fontsize=13)
+plt.xlabel('Actual',fontsize=13)
+plt.title('Confusion Matrix',fontsize=17)
 
 # Tries to create output directory. If it already exists,
 # Wipes and recreates it.
