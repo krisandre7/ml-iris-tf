@@ -1,0 +1,11 @@
+output_classes: 20
+random_seed: 42
+embed_layer: 'top_conv'
+gradcam_image_num: 20
+
+tsne:
+  n_components: 2
+  learning_rate: 'auto'
+  random_state: 42 
+  init: 'pca'
+  perplexity: 3

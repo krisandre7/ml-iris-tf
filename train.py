@@ -43,7 +43,7 @@ print(
 os.makedirs(final_path, exist_ok=True)
 
 # Write config to output folder
-config.to_yaml(os.path.join(final_path, 'config.yaml'))
+config.to_yaml(os.path.join(final_path, 'train_config.yaml'))
     
 model = models.build_pretrained(EfficientNetB0, num_classes=num_classes, **config.build_model)
 
