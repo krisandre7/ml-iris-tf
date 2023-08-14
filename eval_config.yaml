@@ -1,3 +1,11 @@
+random_seed: 42
+
+# getDataframe
+train_size: 0.667
+test_size: 0.333
+csv_dir: './'
+save_csv: False
+
 output_classes: 20
 embed_layer: 'top_conv'
 gradcam_image_num: 20

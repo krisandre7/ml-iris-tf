@@ -1,8 +1,7 @@
 # Datasets
 image_shape: [280, 320, 3]
 csv_dir: './'
-dataset_name: 'casia'
-dataset_dir: './'
+dataset_path: 'casia'
 shuffle_train: True
 batch_size: 64 # batch_size
 
@@ -12,6 +11,7 @@ random_seed: 42
 # StratifiedShuffleSplit
 train_size: 0.667
 test_size: 0.333
+use_csv: True
 
 # Build Model
 build_model: 

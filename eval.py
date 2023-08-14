@@ -23,6 +23,13 @@ parser = argparse.ArgumentParser(
 )
 
 parser.add_argument(
+    '--data_path',
+    '-d',
+    type=str,
+    help='Directory that contains model weights and config.',
+    default='casia'
+)
+parser.add_argument(
     '--model_dir',
     '-i',
     type=str,
@@ -47,17 +54,16 @@ with open('eval_config.yaml', 'r') as file:
     eval_config = Box.from_yaml(file)
 
 training_id = args.model_dir.split('/')[-1]
-final_path = os.path.join(args.output_dir, training_id)
+final_path = os.path.join(args.output_dir, . training_id)
 
 tf.random.set_seed(train_config.random_seed)
 np.random.seed(train_config.random_seed)
 random.seed(train_config.random_seed)
 keras.utils.set_random_seed(train_config.random_seed)
 
-dataset_path = os.path.join(train_config.dataset_dir, train_config.dataset_name)
 train_path = os.path.join(train_config.output_path, training_id)
 
-dataframe = utils.getDataframe(**train_config)
+dataframe = utils.getDataframe(args.data_path, **eval_config)
 
 test_dataframe = dataframe.loc[dataframe['is_test'] == True]
 files_test, labels_test = test_dataframe['name'].to_numpy(), test_dataframe['label'].to_numpy()

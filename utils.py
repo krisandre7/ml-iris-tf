@@ -28,20 +28,19 @@ def load_images(file_paths, input_shape):
       images[i] = imagem
     return tf.convert_to_tensor(images)
 
-def get_label(path: str, dataset_name: str):
-    dataset_split = path.split(dataset_name,1)[1]
-    label = int(dataset_split.split('/',2)[1])
+def get_label(path: str):
+    label = int(path.split('/')[-2])
     return label - 1
 
-def getDataframe(dataset_dir: str, dataset_name: str, csv_dir: str, train_size: float, test_size: float, random_seed: int, **kwargs):
+def getDataframe(dataset_path: str, csv_dir: str, use_csv: bool, train_size: float, test_size: float, random_seed: int, **kwargs):
     csv_name = 'train_test.csv'
     
     dataset = os.path.join(csv_dir, csv_name)
-    if os.path.isfile(dataset):
+    if use_csv and os.path.isfile(dataset):
         return pd.read_csv(dataset, index_col=0)
 
-    file_paths = np.array(glob.glob(dataset_dir + dataset_name + '/*/*.bmp'))
-    labels = np.array([get_label(path, dataset_name) for path in file_paths])
+    file_paths = np.array(glob.glob(dataset_path + '/*/*.bmp'))
+    labels = np.array([get_label(path) for path in file_paths])
     files_train, labels_train, files_test, labels_test = stratifiedSortedSplit(file_paths, labels, train_size, test_size, random_seed)
     
     files = np.concatenate([files_train, files_test])
@@ -53,7 +52,8 @@ def getDataframe(dataset_dir: str, dataset_name: str, csv_dir: str, train_size: 
     
     dataframe["is_test"] = np.concatenate([np.full(len(files_train), False), np.full(len(files_test), True)])    
     
-    dataframe.to_csv(csv_name)
+    if not use_csv:
+        dataframe.to_csv(csv_name)
     
     return dataframe
 

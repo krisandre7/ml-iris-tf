@@ -9,6 +9,7 @@ wandb
 models
 *.keras
 eval
+datasets
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
