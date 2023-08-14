@@ -2,6 +2,8 @@ import argparse
 import os
 import yaml
 import shutil
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3' 
+
 import tensorflow as tf
 import keras
 import utils
@@ -16,6 +18,7 @@ import matplotlib.pyplot as plt
 from sklearn.metrics import classification_report
 from tensorflow.keras.models import Model
 from sklearn.manifold import TSNE
+
 
 parser = argparse.ArgumentParser(
     prog="Model Evaluation",
@@ -54,7 +57,10 @@ with open('eval_config.yaml', 'r') as file:
     eval_config = Box.from_yaml(file)
 
 training_id = args.model_dir.split('/')[-1]
-final_path = os.path.join(args.output_dir, . training_id)
+
+
+dataset_name = args.data_path.split("/")[-1]
+final_path = os.path.join(args.output_dir, dataset_name, training_id)
 
 tf.random.set_seed(train_config.random_seed)
 np.random.seed(train_config.random_seed)
@@ -70,9 +76,7 @@ files_test, labels_test = test_dataframe['name'].to_numpy(), test_dataframe['lab
 
 images_test = utils.load_images(files_test, train_config.image_shape)
 
-num_classes = len(np.unique(dataframe['label']))
-
-model = models.build_pretrained(EfficientNetB0, num_classes=num_classes, **train_config.build_model)
+model = models.build_pretrained(EfficientNetB0, num_classes=eval_config.num_classes, **train_config.build_model)
 model.load_weights(os.path.join(train_path, train_config.save_model.checkpoint_name + '.keras'))
 
 y_pred = model.predict(images_test).argmax(axis=1)

@@ -1,7 +1,7 @@
 # Datasets
 image_shape: [280, 320, 3]
 csv_dir: './'
-dataset_path: 'casia'
+dataset_path: 'datasets/casia'
 shuffle_train: True
 batch_size: 64 # batch_size
 
@@ -14,6 +14,7 @@ test_size: 0.333
 use_csv: True
 
 # Build Model
+num_classes: 108
 build_model: 
   optimizer: 'adam'
   loss: 'sparse_categorical_crossentropy'

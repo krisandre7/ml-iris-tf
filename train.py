@@ -1,10 +1,12 @@
 import random
 import numpy as np
+import datetime, os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3' 
+
 import tensorflow as tf
 from tensorflow import keras
 import random
 import keras
-import datetime, os
 import yaml
 import wandb
 import models
@@ -20,9 +22,10 @@ random.seed(config.random_seed)
 keras.utils.set_random_seed(config.random_seed)
 tf.config.experimental.enable_op_determinism()
 
-dataset_path = os.path.join(config.dataset_dir, config.dataset_name)
 training_id =  datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
-final_path = os.path.join(config.output_path, training_id)
+
+dataset_name = config.dataset_path.split("/")[-1]
+final_path = os.path.join(config.output_path, dataset_name, training_id)
 
 dataframe = utils.getDataframe(**config)
 
@@ -34,7 +37,7 @@ files_train, labels_train = train_dataframe['name'].to_numpy(), train_dataframe[
 images_train = utils.load_images(files_train, config.image_shape)
 images_test = utils.load_images(files_test, config.image_shape)
 
-num_classes = len(np.unique(dataframe['label']))
+num_classes = config.num_classes
 train_count = np.unique(labels_train, return_counts=True)[1].mean()
 test_count = np.unique(labels_test, return_counts=True)[1].mean()
 print(

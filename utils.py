@@ -41,6 +41,15 @@ def getDataframe(dataset_path: str, csv_dir: str, use_csv: bool, train_size: flo
 
     file_paths = np.array(glob.glob(dataset_path + '/*/*.bmp'))
     labels = np.array([get_label(path) for path in file_paths])
+    
+    if train_size == 0 and test_size == 0:
+        dataframe = pd.DataFrame({
+            "name": file_paths,
+            "label": labels,
+        })
+        dataframe["is_test"] = True
+        return dataframe
+        
     files_train, labels_train, files_test, labels_test = stratifiedSortedSplit(file_paths, labels, train_size, test_size, random_seed)
     
     files = np.concatenate([files_train, files_test])
@@ -52,7 +61,7 @@ def getDataframe(dataset_path: str, csv_dir: str, use_csv: bool, train_size: flo
     
     dataframe["is_test"] = np.concatenate([np.full(len(files_train), False), np.full(len(files_test), True)])    
     
-    if not use_csv:
+    if use_csv:
         dataframe.to_csv(csv_name)
     
     return dataframe

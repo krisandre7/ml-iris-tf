@@ -1,14 +1,15 @@
 random_seed: 42
 
 # getDataframe
-train_size: 0.667
-test_size: 0.333
+train_size: 0
+test_size: 0
 csv_dir: './'
-save_csv: False
+use_csv: False
 
+num_classes: 108
 output_classes: 20
 embed_layer: 'top_conv'
-gradcam_image_num: 20
+gradcam_image_num: 6
 
 tsne:
   n_components: 2
